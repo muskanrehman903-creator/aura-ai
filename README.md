@@ -6,8 +6,13 @@ print("Hi!👋 welcome back 😊")
 
 name=input("I'M YOUR AI ASSISTANT. \nwhat is your name?😄")
 print(f"Hello {name} ! I AM AURA😀.")
+
+message=[]
+
 while True:
     message=input("you :" )
+    
+    memory.append(message)
 
     if message== "water":
 	
@@ -28,5 +33,8 @@ while True:
         break  
     else:  
 
-    	print("I'm still learning...😐")  
+    	print("I'm still learning...😐") 
+ 
+print("AURA memory:")
+print(menory)
 
