@@ -9,10 +9,7 @@ print(f"Hello {name} ! I AM AURA😀.")
 
 message=[]
 
-while True:
-    message=input("you :" )
-    
-    memory.append(message)
+def aura_response(message):
 
     if message== "water":
 	
@@ -26,14 +23,24 @@ while True:
 	
         print("Let's save energy⚡")
 
-    elif message =="bye":
-	
-        print("👋Bye!☺️")
-
-        break  
     else:  
 
     	print("I'm still learning...😐") 
+
+while True:
+
+    message = input("You: ")
+
+    memory.append(message)
+
+    if message == "bye":
+        print("👋 Bye! Nice talking with you!")
+        break
+
+    response = aura_response(message)
+
+    print("AURA:", response)
+
  
 print("AURA memory:")
 print(menory)
