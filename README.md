@@ -1,4 +1,8 @@
-print("===============================")
+from openai import OpenAI
+
+client = OpenAI()
+
+("===============================")
 print("            AURA AI                                ")
 print("===============================")
 
@@ -7,25 +11,32 @@ print("Hi!👋 welcome back 😊")
 name=input("I'M YOUR AI ASSISTANT. \nwhat is your name?😄")
 print(f"Hello {name} ! I AM AURA😀.")
 
-message=[]
+memory=[]
 
 def aura_response(message):
 
     if message== "water":
 	
-        print("Let's talk about to save water!💦")
+        return "Let's talk about saving water! 💦"
 
     elif message=="hello":
 	
-        print("Hello!😀")
+        return "Hello! 😀"
 
     elif message=="energy":
 	
-        print("Let's save energy⚡")
+        return "Let's save energy! ⚡"
 
+    
     else:  
 
-    	print("I'm still learning...😐") 
+    	  response = client.responses.create(
+            model="gpt-5.6",
+            input=message
+        )
+
+    return response.output_text
+
 
 while True:
 
@@ -43,5 +54,5 @@ while True:
 
  
 print("AURA memory:")
-print(menory)
+print(memory)
 
